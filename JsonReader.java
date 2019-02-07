@@ -66,11 +66,6 @@ public class JsonReader {
         String ccwm;
         String size;
         int actualSize;
-        double highestCCWM = 0;
-        String bestTeam = "";
-        //String[] team = {"4478x", "41364a", "9605a", "2602h", "162a", "4478d", "4478v"};
-
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
         
         String[] team = new String[60];
         
@@ -115,35 +110,19 @@ public class JsonReader {
                 String[] substringOPR = new String[60];
                 String[] substringWins  = new String[60];
                 String[] subAP = new String[60];
-                //System.out.println(ccwm);
-
-
-                //while("0".equals(substringCCWM))
-                //{
+                
                 substringWins[y] = ccwm.substring(ccwm.indexOf("wins") + 6, ccwm.indexOf("dpr") - 2);
                 ccwm = ccwm.substring(ccwm.indexOf("dpr") + 3);
                 subAP[y] = ccwm.substring(ccwm.indexOf("ap") + 4, ccwm.indexOf("division") - 2);
                 ccwm = ccwm.substring(ccwm.indexOf("division") + 8);
                 substringOPR[y] = ccwm.substring(ccwm.indexOf("opr") + 5, ccwm.indexOf("ties") - 2); //Find the average ccwm of the team
                 ccwm = ccwm.substring(ccwm.indexOf("ties") + 4);
-                //}
-               
-
-                //if (Double.parseDouble(substringCCWM) > highestCCWM) //Determine who has the highest average ccwm in the world
-                //{
-                  //  highestCCWM = Double.parseDouble(substringCCWM);
-                    //bestTeam = team[y];
-                //}
-
-                //System.out.println("The average CCWM is: " + substringCCWM + " for team " + team[y]);
                 
                 System.out.println("Team: " + team[y] + "       " + subAP[y] + "     " + substringOPR[y] + "       " + substringWins[y]);
-                //System.out.println(substringOPR[y]);
-
+                
             }
         }
-        //System.out.println("\nThe best team in the world is: " + bestTeam); //Display the best team in the world
-        //System.out.println("The highest average CCWM is: " + Double.toString(highestCCWM));
+        
     }
 
 }
